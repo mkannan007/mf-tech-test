@@ -25,11 +25,11 @@ jobs:
           with:
            node-version: ${{ matrix.node-version }}
         - name: Install
-          uses: ianwalter/puppeteer@master
+          uses: ianwalter/puppeteer@main
           with:
             args: npm install
         - name: Test
-          uses: ianwalter/puppeteer@master
+          uses: ianwalter/puppeteer@main
           with:
             args: npm run test
         - uses: actions/upload-artifact@v1
