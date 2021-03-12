@@ -1,4 +1,4 @@
-# mf-tech-test
+# tech-test
 
 # steps to run the test
   Clone the repository to your local machine
