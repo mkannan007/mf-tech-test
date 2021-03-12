@@ -82,7 +82,7 @@ exports.config = {
     [
       "cucumberjs-json",
       {
-        jsonFolder: "test/reports/",
+        jsonFolder: "test/target/",
         language: "en"
       }
     ]
@@ -155,8 +155,8 @@ exports.config = {
   onComplete: () => {
     // Generate the report when all tests are done
     generate({
-      jsonDir: "test/reports/",
-      reportPath: "test/reports/",
+      jsonDir: "test/target/",
+      reportPath: "test/target/",
       displayDuration: true,
       openReportInBrowser: true,
       customMetadata: false,
