@@ -12,11 +12,11 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     steps:
         - name: Checkout
           uses: actions/checkout@v2
@@ -25,16 +25,12 @@ jobs:
           with:
            node-version: ${{ matrix.node-version }}
         - name: Install
-          uses: ianwalter/puppeteer@main
-          with:
-            args: npm install
+          run: npm install
         - name: Test
-          uses: ianwalter/puppeteer@main
-          with:
-            args: npm run test
+          run: npm run test
         - uses: actions/upload-artifact@v1
           if: failure()
           with:
-            name: logs
-            path: logs
+            name: reports
+            path: test/target
             
